@@ -1,13 +1,12 @@
 //
-//  Account.swift
-//  OnTheMap
+//  PostSession.swift
+//  On The Map
 //
-//  Created by 🍑 on 01/11/2019.
+//  Created by 🍑 on 08/11/2019.
 //  Copyright © 2019 udacity. All rights reserved.
 //
 
 import Foundation
-
 
 struct Account: Codable {
     let registered: Bool

@@ -1,14 +1,14 @@
 //
 //  PublicUserData.swift
-//  OnTheMap
+//  On The Map
 //
-//  Created by 🍑 on 04/11/2019.
+//  Created by 🍑 on 08/11/2019.
 //  Copyright © 2019 udacity. All rights reserved.
 //
 
 import Foundation
 
-struct PublicUserData {
+struct PublicUserData: Codable {
     let firstName: String
     let lastName: String
     

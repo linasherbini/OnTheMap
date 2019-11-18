@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  OnTheMap
+//  On The Map
 //
-//  Created by 🍑 on 25/10/2019.
+//  Created by 🍑 on 12/11/2019.
 //  Copyright © 2019 udacity. All rights reserved.
 //
 
