@@ -24,6 +24,10 @@ class ConfirmLocationVC: UIViewController {
         }
     }
     //MARK:- IBAction
+    @IBAction func cancel(_sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func submit(_ sender: Any) {
         DispatchQueue.main.async {
             OTMClient.postStudentLocation(self.location!, completion: self.postStudentHandler(errorMsg:error:))

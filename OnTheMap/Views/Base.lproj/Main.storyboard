@@ -231,7 +231,7 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugW-kU-oMD">
                                 <rect key="frame" x="150.5" y="765" width="113" height="30"/>
-                                <state key="normal" title="Confirm location"/>
+                                <state key="normal" title="Submit location"/>
                                 <connections>
                                     <action selector="submit:" destination="sI9-dG-yzG" eventType="touchUpInside" id="DvK-TX-xUk"/>
                                 </connections>
@@ -245,8 +245,13 @@
                                     <constraint firstAttribute="height" constant="44" id="dS9-bm-8qB"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Confirm" id="aEy-eu-voQ">
+                                    <navigationItem title="Submit" leftItemsSupplementBackButton="YES" id="aEy-eu-voQ">
                                         <barButtonItem key="backBarButtonItem" title="Add location" id="Uoo-Wk-PAf"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="efu-7S-Gu3">
+                                            <connections>
+                                                <action selector="cancelWith_sender:" destination="sI9-dG-yzG" id="Hx9-zw-01d"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

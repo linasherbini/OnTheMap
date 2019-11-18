@@ -12,8 +12,8 @@ import MapKit
 class OTMClient {
     
     struct Auth {
-        static var firstName = "kevin"
-        static var lastName = "abstract"
+        static var firstName = "lina"
+        static var lastName = "sherbini"
         static var key = ""
         static var sessionId = ""
     }
