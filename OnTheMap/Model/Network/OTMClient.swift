@@ -12,8 +12,8 @@ import MapKit
 class OTMClient {
     
     struct Auth {
-        static var firstName = "lina"
-        static var lastName = "sherbini"
+        static var firstName = ""
+        static var lastName = ""
         static var key = ""
         static var sessionId = ""
     }
@@ -147,7 +147,35 @@ class OTMClient {
         task.resume()
     }
     
+    class func getPublicUserData(key: Int, completion: @escaping (PublicUserData?, Error?) -> ()) {
+    let request = URLRequest(url: Endpoints.getPublicUserData(key).url)
+    let session = URLSession.shared
+    let task = session.dataTask(with: request) { data, response, error in
+        if error != nil {
+            completion(nil, error)
+            return
+        }
+        var publicUser: PublicUserData?
+        guard let data = data else { return }
+        let newData = data.subdata(in: 5..<data.count)
+        guard let response = response as? HTTPURLResponse else { return }
+        if response.statusCode >= 200 && response.statusCode < 300 {
+            let decoder = JSONDecoder()
+            do {
+                let userObject = try decoder.decode(PublicUserData.self, from: newData)
+                publicUser = userObject
+            } catch {
+                completion(nil, error)
+            }
+        }else {
+            completion(nil, error)
+        }
+        DispatchQueue.main.async {
+            completion(publicUser,nil)
+        }
+    }
+    task.resume()
     }
     
-    
+}
 

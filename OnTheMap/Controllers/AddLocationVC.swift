@@ -19,9 +19,18 @@ class AddLocationVC: UIViewController {
 
     //MARK:- Life cycles
     override func viewDidLoad() {
+        super.viewDidLoad()
         locationTextField.delegate = self
         urlTextField.delegate = self
-        super.viewDidLoad()
+        OTMClient.getPublicUserData(key: Int(OTMClient.Auth.key) ?? 0) { (user, error) in
+            guard error == nil else {
+                self.showAlertMessage("Error", error!.localizedDescription)
+                return
+            }
+            guard let user = user else { return }
+            OTMClient.Auth.firstName = user.firstName
+            OTMClient.Auth.firstName = user.lastName
+        }
     }
     //MARK: IBActions
     @IBAction func cancel(_ sender: Any) {

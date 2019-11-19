@@ -61,9 +61,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
                     self.setAnnotations() //if no error occurs set up annotations on map
                 }
             } else {
-                DispatchQueue.main.async {
-                    self.showAlertMessage("Error", errorMsg!)
-                }
+                self.showAlertMessage("Error", errorMsg!)
             }
         }
     }

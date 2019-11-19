@@ -50,10 +50,8 @@ class LoginVC: UIViewController {
                 self.activityIndicator.startAnimating()
             }
         } else {
-            DispatchQueue.main.async {
-                self.showAlertMessage("Login Failed", "The email and/or password you entered are incorrect")
-                self.activityIndicator.stopAnimating()
-            }
+            self.showAlertMessage("Login Failed", error!.localizedDescription)
+            self.activityIndicator.stopAnimating()
         }
     }
     

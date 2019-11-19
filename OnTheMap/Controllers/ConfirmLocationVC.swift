@@ -22,6 +22,7 @@ class ConfirmLocationVC: UIViewController {
             self.activityIndicator.startAnimating()
             self.setAnnotations()
         }
+        
     }
     //MARK:- IBAction
     @IBAction func cancel(_sender: Any) {
